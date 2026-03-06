@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Seddik Hadj Said — Embedded Systems & Robotics Enthusiast from Algeria. Arduino, ESP, 3D Design, PCB Design, Python, and Public Speaking." />
+  <meta name="keywords" content="Seddik Hadj Said, robotics, Arduino, ESP, Algeria, embedded systems, PCB design, 3D design, innovation" />
+  <meta name="author" content="Seddik Hadj Said" />
+  <meta property="og:title" content="Seddik Hadj Said | Robotics & Innovation" />
+  <meta property="og:description" content="17-year-old innovator from Algeria with 5 years of robotics experience." />
+  <meta property="og:type" content="website" />
+  <title>Seddik Hadj Said | Embedded Systems & Robotics</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══ CURSOR ══ -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ══ NAVIGATION ══ -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main Navigation">
+    <div class="nav-logo">
+      <span class="logo-bracket">&lt;</span>SHS<span class="logo-bracket">/&gt;</span>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#achievements" class="nav-link">Achievements</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero" id="home" aria-label="Hero Section">
+    <canvas id="particleCanvas" aria-hidden="true"></canvas>
+
+    <!-- Circuit grid overlay -->
+    <div class="circuit-overlay" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span class="tag-dot"></span>
+        <span class="mono">Algeria / Innovation / Technology</span>
+      </div>
+
+      <h1 class="hero-name">
+        <span class="name-line reveal-up">Seddik</span>
+        <span class="name-line reveal-up delay-1">Hadj Said</span>
+      </h1>
+
+      <div class="hero-title reveal-up delay-2">
+        <span id="typedText" class="typed-text"></span>
+        <span class="cursor-blink">|</span>
+      </div>
+
+      <p class="hero-tagline reveal-up delay-3">
+        Building tomorrow's solutions with circuits, code, and creativity — <br class="br-desktop"/>
+        one innovation at a time.
+      </p>
+
+      <div class="hero-cta reveal-up delay-4">
+        <a href="#projects" class="btn btn-primary">
+          <span>View My Projects</span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+      </div>
+
+      <div class="hero-stats reveal-up delay-5">
+        <div class="stat">
+          <span class="stat-num" data-count="5">0</span><span class="stat-unit">+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="5">0</span><span class="stat-unit"></span>
+          <span class="stat-label">Projects Built</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="4">0</span><span class="stat-unit">+</span>
+          <span class="stat-label">Achievements</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-image-wrap reveal-right">
+      <div class="hero-image-ring ring-1" aria-hidden="true"></div>
+      <div class="hero-image-ring ring-2" aria-hidden="true"></div>
+      <div class="hero-image-ring ring-3" aria-hidden="true"></div>
+      <div class="hero-photo-container">
+        <img
+          src="images/profile.jpg"
+          alt="Seddik Hadj Said — Robotics and Innovation Enthusiast"
+          class="hero-photo"
+          onerror="this.src='https://placehold.co/400x500/0d1117/00d4aa?text=Seddik+Hadj+Said&font=syne'"
+        />
+        <div class="hero-photo-glow" aria-hidden="true"></div>
+      </div>
+      <div class="floating-badge badge-1">
+        <i class="fas fa-microchip" aria-hidden="true"></i> Arduino
+      </div>
+      <div class="floating-badge badge-2">
+        <i class="fas fa-cube" aria-hidden="true"></i> 3D Design
+      </div>
+      <div class="floating-badge badge-3">
+        <i class="fas fa-trophy" aria-hidden="true"></i> 4x National
+      </div>
+    </div>
+
+    <a href="#about" class="hero-scroll" aria-label="Scroll to About section">
+      <span class="scroll-text mono">scroll</span>
+      <div class="scroll-line"></div>
+    </a>
+  </section>
+
+  <!-- ══ ABOUT ══ -->
+  <section class="section about-section" id="about" aria-label="About Me">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag mono">01 / About</span>
+        <h2 class="section-title">The Story Behind<br /><em>the Builder</em></h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="about-lead">
+            At 17, I'm not waiting for the future — I'm <strong>engineering it</strong>.
+            Based in Algeria, I've spent the last five years transforming ideas into
+            real, working systems that interact with the physical world.
+          </p>
+          <p>
+            My journey began with a curiosity about how things work — how a simple circuit
+            can light up an LED, how code can bring a robot to life, how CAD software can
+            turn a sketch into a 3D-printed component. That curiosity turned into passion,
+            and passion turned into expertise.
+          </p>
+          <p>
+            Through the <strong>نبتكر</strong> (Nabtakir) association, I've pushed my boundaries
+            in robotics and embedded systems. I work across the full hardware-software stack:
+            from schematic design and PCB layout to Python scripts and ESP-based IoT devices.
+            I'm also a confident public speaker who has presented innovations at national-level
+            exhibitions attended by government ministers.
+          </p>
+          <p>
+            My goal is simple: to be an engineer who builds things that matter — for Algeria,
+            for the Arab world, and for humanity.
+          </p>
+
+          <div class="about-badges">
+            <span class="badge"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Algeria</span>
+            <span class="badge"><i class="fas fa-graduation-cap" aria-hidden="true"></i> 17 Years Old</span>
+            <span class="badge"><i class="fas fa-robot" aria-hidden="true"></i> نبتكر Association</span>
+            <span class="badge"><i class="fas fa-microchip" aria-hidden="true"></i> Embedded Systems</span>
+          </div>
+        </div>
+
+        <div class="about-timeline">
+          <h3 class="timeline-heading mono">Journey Timeline</h3>
+          <div class="timeline">
+            <div class="timeline-item" data-year="2019">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year mono">2019</span>
+                <h4>Joined نبتكر Association</h4>
+                <p>Started learning electronics, Arduino basics, and robotics fundamentals.</p>
+              </div>
+            </div>
+            <div class="timeline-item" data-year="2020">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year mono">2020–2021</span>
+                <h4>First Robots & Projects</h4>
+                <p>Built line followers, obstacle avoidance cars. Learned C/C++ for microcontrollers.</p>
+              </div>
+            </div>
+            <div class="timeline-item" data-year="2022">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year mono">2022–2023</span>
+                <h4>PCB Design & 3D Modeling</h4>
+                <p>Advanced to custom PCB design and 3D-printed enclosures for projects.</p>
+              </div>
+            </div>
+            <div class="timeline-item" data-year="2023">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year mono">Dec 2023</span>
+                <h4>National Exhibition — Ghardaia</h4>
+                <p>Presented at innovation exhibition attended by Algeria's Minister of Education.</p>
+              </div>
+            </div>
+            <div class="timeline-item" data-year="2024">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year mono">2024</span>
+                <h4>National Competitions & Book Fair</h4>
+                <p>4th place nationally in ARC4 & national innovation competition. Book Fair exhibition.</p>
+              </div>
+            </div>
+            <div class="timeline-item" data-year="2024" style="--delay:5">
+              <div class="timeline-dot active"></div>
+              <div class="timeline-content">
+                <span class="timeline-year mono">Today</span>
+                <h4>Graduate & Innovator</h4>
+                <p>5-year نبتكر graduate. Building smarter, faster, better.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SKILLS ══ -->
+  <section class="section skills-section" id="skills" aria-label="Skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag mono">02 / Skills</span>
+        <h2 class="section-title">Tools of the<br /><em>Trade</em></h2>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-card" tabindex="0" aria-label="Arduino skill">
+          <div class="skill-icon-wrap">
+            <div class="skill-icon">
+              <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M18 30h8M34 30h8M22 24l4 6-4 6M38 24l-4 6 4 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="skill-name">Arduino</h3>
+          <p class="skill-desc">Microcontroller programming, sensor integration, real-time control systems.</p>
+          <div class="skill-level">
+            <div class="skill-bar" style="--fill: 90%"></div>
+          </div>
+          <span class="skill-years mono">5 years</span>
+        </div>
+
+        <div class="skill-card" tabindex="0" aria-label="ESP skill">
+          <div class="skill-icon-wrap">
+            <div class="skill-icon">
+              <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="10" y="18" width="40" height="24" rx="3" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M20 26h20M20 30h14M20 34h17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M46 24c3 0 5 2.7 5 6s-2 6-5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="skill-name">ESP / IoT</h3>
+          <p class="skill-desc">WiFi & Bluetooth connected devices, ESP8266/ESP32, smart home systems.</p>
+          <div class="skill-level">
+            <div class="skill-bar" style="--fill: 85%"></div>
+          </div>
+          <span class="skill-years mono">4 years</span>
+        </div>
+
+        <div class="skill-card" tabindex="0" aria-label="3D Design skill">
+          <div class="skill-icon-wrap">
+            <div class="skill-icon">
+              <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M30 10L50 22v16L30 50 10 38V22L30 10z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M30 10v40M10 22l20 16 20-16" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 2"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="skill-name">3D Design</h3>
+          <p class="skill-desc">CAD modeling, 3D printing, enclosure design for electronics projects.</p>
+          <div class="skill-level">
+            <div class="skill-bar" style="--fill: 80%"></div>
+          </div>
+          <span class="skill-years mono">3 years</span>
+        </div>
+
+        <div class="skill-card" tabindex="0" aria-label="PCB Design skill">
+          <div class="skill-icon-wrap">
+            <div class="skill-icon">
+              <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="8" y="8" width="44" height="44" rx="3" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="20" y="20" width="20" height="20" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M8 20h12M8 30h12M8 40h12M40 20h12M40 30h12M40 40h12M20 8v12M30 8v12M40 8v12M20 40v12M30 40v12M40 40v12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="skill-name">PCB Design</h3>
+          <p class="skill-desc">Schematic capture, PCB layout, component selection, manufacturing-ready files.</p>
+          <div class="skill-level">
+            <div class="skill-bar" style="--fill: 78%"></div>
+          </div>
+          <span class="skill-years mono">3 years</span>
+        </div>
+
+        <div class="skill-card" tabindex="0" aria-label="Python skill">
+          <div class="skill-icon-wrap">
+            <div class="skill-icon">
+              <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M22 10c-6 0-10 3-10 8v6h18v2H12c-5 0-8 3-8 10v6c0 5 4 8 10 8h4v-8c0-5 3-8 8-8h12c5 0 8-3 8-8V18c0-5-3-8-8-8H22z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M38 50c6 0 10-3 10-8v-6H30v-2h20c5 0 8-3 8-10v-6c0-5-4-8-10-8h-4v8c0 5-3 8-8 8H24c-5 0-8 3-8 8v8c0 5 3 8 8 8h14z" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="27" cy="19" r="2" fill="currentColor"/>
+                <circle cx="33" cy="41" r="2" fill="currentColor"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="skill-name">Python</h3>
+          <p class="skill-desc">Automation, data processing, hardware interfacing, scripting, prototyping.</p>
+          <div class="skill-level">
+            <div class="skill-bar" style="--fill: 82%"></div>
+          </div>
+          <span class="skill-years mono">3 years</span>
+        </div>
+
+        <div class="skill-card" tabindex="0" aria-label="Public Speaking skill">
+          <div class="skill-icon-wrap">
+            <div class="skill-icon">
+              <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="30" cy="18" r="8" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M14 48c0-8.8 7.2-16 16-16s16 7.2 16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M42 28c3 2 5 5.5 5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M46 22c5 3 8 8.5 8 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="skill-name">Public Speaking</h3>
+          <p class="skill-desc">Conference presentations, exhibitions, communicating complex ideas clearly.</p>
+          <div class="skill-level">
+            <div class="skill-bar" style="--fill: 88%"></div>
+          </div>
+          <span class="skill-years mono">5 years</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PROJECTS ══ -->
+  <section class="section projects-section" id="projects" aria-label="Projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag mono">03 / Projects</span>
+        <h2 class="section-title">What I've<br /><em>Built</em></h2>
+      </div>
+
+      <div class="projects-filter" role="group" aria-label="Project filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="robotics">Robotics</button>
+        <button class="filter-btn" data-filter="iot">IoT / Smart</button>
+        <button class="filter-btn" data-filter="games">Games</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+
+        <article class="project-card" data-category="games" tabindex="0">
+          <div class="project-img-wrap">
+            <img
+              src="images/cyclon-game.jpg"
+              alt="Cyclon Game — LED ring game project"
+              class="project-img"
+              loading="lazy"
+              onerror="this.src='https://placehold.co/600x400/0d1117/00d4aa?text=Cyclon+Game&font=syne'"
+            />
+            <div class="project-overlay">
+              <div class="project-overlay-content">
+                <span class="project-cat mono">Arduino / Game</span>
+                <p>Spin the LED, beat the odds. A reflex-testing game built with a WS2812 LED ring and custom PCB.</p>
+                <div class="project-links">
+                  <a href="#" class="project-link" aria-label="View Cyclon Game on GitHub">
+                    <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                  </a>
+                  <a href="#" class="project-link" aria-label="View Cyclon Game demo">
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i> Demo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Cyclon Game</h3>
+            <p class="project-short">A reaction-speed LED ring game powered by Arduino with custom PCB design and animated light sequences.</p>
+            <div class="project-tags">
+              <span class="ptag">Arduino</span>
+              <span class="ptag">WS2812</span>
+              <span class="ptag">PCB Design</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="iot" tabindex="0">
+          <div class="project-img-wrap">
+            <img
+              src="images/smart-plug.jpg"
+              alt="Smart Plug — IoT controlled electrical socket"
+              class="project-img"
+              loading="lazy"
+              onerror="this.src='https://placehold.co/600x400/0d1117/00d4aa?text=Smart+Plug&font=syne'"
+            />
+            <div class="project-overlay">
+              <div class="project-overlay-content">
+                <span class="project-cat mono">ESP / IoT</span>
+                <p>Control your home appliances from anywhere. WiFi-connected smart plug with energy monitoring.</p>
+                <div class="project-links">
+                  <a href="#" class="project-link" aria-label="View Smart Plug on GitHub">
+                    <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                  </a>
+                  <a href="#" class="project-link" aria-label="View Smart Plug demo">
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i> Demo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Smart Plug</h3>
+            <p class="project-short">WiFi-enabled smart plug built with ESP8266, controllable via mobile app with real-time power monitoring.</p>
+            <div class="project-tags">
+              <span class="ptag">ESP8266</span>
+              <span class="ptag">IoT</span>
+              <span class="ptag">PCB</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="robotics" tabindex="0">
+          <div class="project-img-wrap">
+            <img
+              src="images/line-follower.jpg"
+              alt="Line Follower Car — autonomous robot"
+              class="project-img"
+              loading="lazy"
+              onerror="this.src='https://placehold.co/600x400/0d1117/00d4aa?text=Line+Follower+Car&font=syne'"
+            />
+            <div class="project-overlay">
+              <div class="project-overlay-content">
+                <span class="project-cat mono">Robotics / Autonomous</span>
+                <p>Precision IR-sensor-based robot that follows complex paths with PID control algorithm.</p>
+                <div class="project-links">
+                  <a href="#" class="project-link" aria-label="View Line Follower on GitHub">
+                    <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Line Follower Car</h3>
+            <p class="project-short">Autonomous robot using IR sensors and PID control to follow complex line tracks with high precision.</p>
+            <div class="project-tags">
+              <span class="ptag">Arduino</span>
+              <span class="ptag">PID Control</span>
+              <span class="ptag">Robotics</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="robotics" tabindex="0">
+          <div class="project-img-wrap">
+            <img
+              src="images/avoid-obstacles.jpg"
+              alt="Avoid Obstacles Car — autonomous navigation robot"
+              class="project-img"
+              loading="lazy"
+              onerror="this.src='https://placehold.co/600x400/0d1117/00d4aa?text=Obstacle+Avoidance+Car&font=syne'"
+            />
+            <div class="project-overlay">
+              <div class="project-overlay-content">
+                <span class="project-cat mono">Robotics / Navigation</span>
+                <p>Ultrasonic-equipped robot that navigates unknown environments and avoids obstacles autonomously.</p>
+                <div class="project-links">
+                  <a href="#" class="project-link" aria-label="View Obstacle Car on GitHub">
+                    <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Avoid Obstacles Car</h3>
+            <p class="project-short">Smart navigation robot with ultrasonic sensors that maps and avoids obstacles in real-time environments.</p>
+            <div class="project-tags">
+              <span class="ptag">Arduino</span>
+              <span class="ptag">Ultrasonic</span>
+              <span class="ptag">Servo</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="iot" tabindex="0">
+          <div class="project-img-wrap">
+            <img
+              src="images/smart-door-lock.jpg"
+              alt="Smart Door Lock — IoT security system"
+              class="project-img"
+              loading="lazy"
+              onerror="this.src='https://placehold.co/600x400/0d1117/00d4aa?text=Smart+Door+Lock&font=syne'"
+            />
+            <div class="project-overlay">
+              <div class="project-overlay-content">
+                <span class="project-cat mono">IoT / Security</span>
+                <p>RFID + keypad + WiFi door lock system with remote access and access logging.</p>
+                <div class="project-links">
+                  <a href="#" class="project-link" aria-label="View Smart Door Lock on GitHub">
+                    <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                  </a>
+                  <a href="#" class="project-link" aria-label="View Smart Door Lock demo">
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i> Demo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Smart Door Lock</h3>
+            <p class="project-short">Multi-factor security system combining RFID, keypad PIN, and WiFi remote unlock with access logs.</p>
+            <div class="project-tags">
+              <span class="ptag">ESP32</span>
+              <span class="ptag">RFID</span>
+              <span class="ptag">Security</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ACHIEVEMENTS ══ -->
+  <section class="section achievements-section" id="achievements" aria-label="Achievements">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag mono">04 / Achievements</span>
+        <h2 class="section-title">Milestones &<br /><em>Recognition</em></h2>
+      </div>
+
+      <div class="achievements-grid">
+
+        <article class="achievement-card" tabindex="0">
+          <div class="achievement-img-wrap">
+            <img
+              src="images/arc4-competition.jpg"
+              alt="ARC4 Competition — 4th place nationally"
+              class="achievement-img"
+              loading="lazy"
+              onerror="this.src='https://placehold.co/600x360/0d1117/f59e0b?text=ARC4+Competition&font=syne'"
+            />
+            <div class="achievement-badge-icon">
+              <i class="fas fa-medal" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="achievement-info">
+            <span class="achievement-year mono">2024</span>
+            <h3 class="achievement-title">4th Place — ARC4 National Robotics</h3>
+            <p>Secured 4th place nationally in the ARC4 Robotics Competition organized by CELEC, competing against top robotics teams across Algeria.</p>
+            <div class="achievement-tags">
+              <span class="atag"><i class="fas fa-trophy" aria-hidden="true"></i> 4th National</span>
+              <span class="atag">CELEC</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="achievement-card" tabindex="0">
+          <div class="achievement-img-wrap">
+            <img
+              src="images/ghardaia-exhibition.jpg"
+              alt="Innovation Exhibition at Ghardaia attended by Minister"
+              class="achievement-img"
+              loading="lazy"
+              onerror="this.src='https://placehold.co/600x360/0d1117/f59e0b?text=Ghardaia+Exhibition&font=syne'"
+            />
+            <div class="achievement-badge-icon">
+              <i class="fas fa-star" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="achievement-info">
+            <span class="achievement-year mono">Dec 26, 2023</span>
+            <h3 class="achievement-title">Ministerial Innovation Exhibition — Ghardaia</h3>
+            <p>Presented innovations at the Robotics & Innovation Exhibition in Ghardaia, attended by Algeria's Minister of Education and government officials.</p>
+            <div class="achievement-tags">
+              <span class="atag"><i class="fas fa-university" aria-hidden="true"></i> Ministerial</span>
+              <span class="atag">Ghardaia</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="achievement-card" tabindex="0">
+          <div class="achievement-img-wrap">
+            <img
+              src="images/eloued-competition.jpg"
+              alt="National Innovation Competition El Oued 2024"
+              class="achievement-img"
+              loading="lazy"
+              onerror="this.src='https://placehold.co/600x360/0d1117/f59e0b?text=El+Oued+Competition&font=syne'"
+            />
+            <div class="achievement-badge-icon">
+              <i class="fas fa-award" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="achievement-info">
+            <span class="achievement-year mono">Dec 2024</span>
+            <h3 class="achievement-title">4th Place — National Innovation Competition</h3>
+            <p>Achieved 4th place nationally in the National Innovation Competition held in El Oued, showcasing advanced engineering projects.</p>
+            <div class="achievement-tags">
+              <span class="atag"><i class="fas fa-trophy" aria-hidden="true"></i> 4th National</span>
+              <span class="atag">El Oued</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="achievement-card" tabindex="0">
+          <div class="achievement-img-wrap">
+            <img
+              src="images/book-fair.jpg"
+              alt="International Book Fair Innovation Exhibition"
+              class="achievement-img"
+              loading="lazy"
+              onerror="this.src='https://placehold.co/600x360/0d1117/f59e0b?text=International+Book+Fair&font=syne'"
+            />
+            <div class="achievement-badge-icon">
+              <i class="fas fa-globe" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="achievement-info">
+            <span class="achievement-year mono">2024</span>
+            <h3 class="achievement-title">International Book Fair — Innovation Exhibition</h3>
+            <p>Selected to showcase innovations at the prestigious International Book Fair exhibition, reaching an international audience of thousands.</p>
+            <div class="achievement-tags">
+              <span class="atag"><i class="fas fa-globe" aria-hidden="true"></i> International</span>
+              <span class="atag">Book Fair</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="achievement-card achievement-card--wide" tabindex="0">
+          <div class="achievement-img-wrap">
+            <img
+              src="images/nabtakir-graduation.jpg"
+              alt="Graduate of نبتكر Association after 5 years"
+              class="achievement-img"
+              loading="lazy"
+              onerror="this.src='https://placehold.co/600x360/0d1117/f59e0b?text=%D9%86%D8%A8%D8%AA%D9%83%D8%B1+Graduate&font=syne'"
+            />
+            <div class="achievement-badge-icon">
+              <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="achievement-info">
+            <span class="achievement-year mono">2019 – 2024</span>
+            <h3 class="achievement-title">Graduate — نبتكر (Nabtakir) Association</h3>
+            <p>Completed 5 years of intensive robotics and innovation training at نبتكر association — from beginner to national competitor and project leader, mastering embedded systems, PCB design, 3D modeling, and team collaboration.</p>
+            <div class="achievement-tags">
+              <span class="atag"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Graduate</span>
+              <span class="atag">5 Years</span>
+              <span class="atag">نبتكر</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ══ -->
+  <section class="section contact-section" id="contact" aria-label="Contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag mono">05 / Contact</span>
+        <h2 class="section-title">Let's Build<br /><em>Something</em></h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="contact-lead">
+            Have a project in mind? Want to collaborate or just say hello?
+            I'm always open to interesting conversations and new challenges.
+          </p>
+
+          <div class="contact-links">
+            <a href="mailto:seddikhadjsaid@gmail.com" class="contact-link" aria-label="Send email to Seddik">
+              <div class="contact-link-icon">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+              </div>
+              <div class="contact-link-text">
+                <span class="contact-link-label mono">Email</span>
+                <span class="contact-link-value">seddikhadjsaid@gmail.com</span>
+              </div>
+              <i class="fas fa-arrow-right contact-arrow" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://instagram.com/saddik.hadj.said" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Follow Seddik on Instagram">
+              <div class="contact-link-icon">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+              </div>
+              <div class="contact-link-text">
+                <span class="contact-link-label mono">Instagram</span>
+                <span class="contact-link-value">@saddik.hadj.said</span>
+              </div>
+              <i class="fas fa-arrow-right contact-arrow" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://facebook.com/seddik.hadj.said" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Find Seddik on Facebook">
+              <div class="contact-link-icon">
+                <i class="fab fa-facebook" aria-hidden="true"></i>
+              </div>
+              <div class="contact-link-text">
+                <span class="contact-link-label mono">Facebook</span>
+                <span class="contact-link-value">Seddik Hadj Said</span>
+              </div>
+              <i class="fas fa-arrow-right contact-arrow" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate aria-label="Contact form">
+          <div class="form-group">
+            <label for="formName" class="form-label mono">Name</label>
+            <input type="text" id="formName" name="name" class="form-input" placeholder="Your name" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="formEmail" class="form-label mono">Email</label>
+            <input type="email" id="formEmail" name="email" class="form-input" placeholder="your@email.com" required autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="formMessage" class="form-label mono">Message</label>
+            <textarea id="formMessage" name="message" class="form-input form-textarea" placeholder="Tell me about your project or idea..." required rows="5"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">
+            <span>Send Message</span>
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+          </button>
+          <div class="form-success" id="formSuccess" role="alert" aria-live="polite">
+            <i class="fas fa-check-circle" aria-hidden="true"></i>
+            Message sent! I'll get back to you soon.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="footer-logo">
+          <span class="logo-bracket">&lt;</span>SHS<span class="logo-bracket">/&gt;</span>
+        </span>
+        <span class="footer-copy mono">© 2024 Seddik Hadj Said. All rights reserved.</span>
+      </div>
+      <div class="footer-right">
+        <a href="https://github.com/seddikhadjsaid" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Seddik's GitHub">
+          <i class="fab fa-github" aria-hidden="true"></i>
+        </a>
+        <a href="https://instagram.com/saddik.hadj.said" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Seddik's Instagram">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://facebook.com/seddik.hadj.said" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Seddik's Facebook">
+          <i class="fab fa-facebook" aria-hidden="true"></i>
+        </a>
+        <a href="mailto:seddikhadjsaid@gmail.com" class="footer-link" aria-label="Email Seddik">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="mono">Made with <span class="heart">♥</span> in Algeria · Powered by creativity & circuits</p>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
